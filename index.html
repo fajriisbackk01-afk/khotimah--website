@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💖 Untuk Khotimah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(16px);
+            border-radius: 40px;
+            padding: 30px 25px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            position: relative;
+        }
+        .foto-pacar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 16px 10px 12px;
+            border-radius: 60px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .foto-pacar img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .foto-pacar .nama {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+        .foto-pacar .sub {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: -4px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 6px;
+        }
+        .subtitle {
+            color: #fff;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        label {
+            color: #fff;
+            font-weight: 600;
+            display: block;
+            text-align: left;
+            margin: 14px 0 4px;
+        }
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus,
+        textarea:focus {
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(166, 193, 238, 0.6);
+        }
+        .file-area {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 16px 10px;
+            margin-top: 6px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .file-area:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .file-area small {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 6px;
+        }
+        #fileCount {
+            color: #fff;
+            font-weight: 600;
+            margin-top: 6px;
+            font-size: 0.9rem;
+        }
+        .btn {
+            background: #fff;
+            color: #a6c1ee;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-top: 20px;
+            width: 100%;
+        }
+        .btn:hover {
+            background: #f0f0ff;
+            transform: scale(1.02);
+        }
+        #status {
+            margin-top: 14px;
+            color: #fff;
+            font-weight: 600;
+        }
+        #music-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            backdrop-filter: blur(4px);
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+        #music-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .footer {
+            margin-top: 18px;
+            color: #fff;
+            opacity: 0.6;
+            font-size: 0.75rem;
+        }
+        .file-list {
+            text-align: left;
+            margin-top: 8px;
+            color: #fff;
+            font-size: 0.8rem;
+            max-height: 80px;
+            overflow-y: auto;
+        }
+        .file-list span {
+            display: block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 2px;
+        }
+        .file-list .count-badge {
+            background: rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- ===== FOTO & NAMA PACAR ===== -->
+        <div class="foto-pacar">
+            <img src="https://files.catbox.moe/wqttro.jpg" alt="Foto Khotimah" />
+            <div>
+                <div class="nama">💖 Khotimah</div>
+                <div class="sub">🌹 Untukmu yang selalu di hati</div>
+            </div>
+        </div>
+
+        <h1>💌 Surat Cinta Digital</h1>
+        <p class="subtitle">Jawab pertanyaan & kirim minimal 10 PAP (foto/video)!</p>
+
+        <!-- ===== FORM ===== -->
+        <form id="formKirim">
+            <label>📛 Nama Kamu</label>
+            <input type="text" id="nama" placeholder="Contoh: Nabila" required />
+
+            <label>📌 Pertanyaan 1</label>
+            <input type="text" id="q1" placeholder="Makanan favorit kita berdua?" required />
+
+            <label>📌 Pertanyaan 2</label>
+            <input type="text" id="q2" placeholder="Kapan pertama kali kita ketemu?" required />
+
+            <label>📌 Pertanyaan 3</label>
+            <input type="text" id="q3" placeholder="Warna kesukaan aku?" required />
+
+            <label>📌 Pertanyaan 4</label>
+            <input type="text" id="q4" placeholder="Satu hal yang paling kamu suka dariku?" required />
+
+            <label>📸 Kirim PAP (minimal 10 foto/video)</label>
+            <div class="file-area" id="fileArea">
+                📁 Klik atau taruh file di sini
+                <small>Bisa pilih banyak sekaligus (Ctrl+klik / Shift+klik)</small>
+            </div>
+            <input type="file" id="fileInput" accept="image/*,video/*" multiple style="display:none;" />
+            <div id="fileCount">📎 0 file dipilih</div>
+            <div class="file-list" id="fileList"></div>
+
+            <button type="submit" class="btn">💌 Kirim ke Telegram</button>
+        </form>
+
+        <div id="status"></div>
+
+        <!-- ===== MUSIK ===== -->
+        <button id="music-btn">🎵 Putar Musik</button>
+        <p style="font-size:0.75rem; margin-top:4px; color:#fff;" id="music-status">Musik: Diam</p>
+
+        <p class="footer">❤️ Dibuat khusus untuk Khotimah</p>
+    </div>
+
+    <!-- ===== AUDIO ===== -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+        // ===== MUSIK =====
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-btn');
+        const statusMusic = document.getElementById('music-status');
+
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '⏸️ Hentikan Musik';
+                statusMusic.textContent = '🎵 Musik: Hidup';
+            } else {
+                audio.pause();
+                btn.textContent = '🎵 Putar Musik';
+                statusMusic.textContent = '🎵 Musik: Diam';
+            }
+        });
+
+        // ===== FILE INPUT HANDLER =====
+        const fileInput = document.getElementById('fileInput');
+        const fileArea = document.getElementById('fileArea');
+        const fileCount = document.getElementById('fileCount');
+        const fileList = document.getElementById('fileList');
+
+        fileArea.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            const count = files.length;
+            fileCount.textContent = `📎 ${count} file dipilih`;
+
+            fileList.innerHTML = '';
+            let names = '';
+            for (let i = 0; i < Math.min(count, 10); i++) {
+                names += `<span>📄 ${files[i].name}</span>`;
+            }
+            if (count > 10) names += `<span>... dan ${count - 10} file lainnya</span>`;
+            fileList.innerHTML = names;
+        });
+
+        // ===== KIRIM KE TELEGRAM =====
+        document.getElementById('formKirim').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '⏳ Mengirim...';
+
+            const nama = document.getElementById('nama').value.trim();
+            const q1 = document.getElementById('q1').value.trim();
+            const q2 = document.getElementById('q2').value.trim();
+            const q3 = document.getElementById('q3').value.trim();
+            const q4 = document.getElementById('q4').value.trim();
+            const files = fileInput.files;
+
+            // ===== VALIDASI MINIMAL 10 =====
+            if (files.length < 10) {
+                statusDiv.innerHTML = '❌ Minimal 10 file PAP! (' + files.length + '/10)';
+                return;
+            }
+
+            // ===== GANTI INI =====
+            const BOT_TOKEN = '8940234311:AAFx5EUGuL_9iiTPvFL9rEf4wOe-aNgluBo';
+            const CHAT_ID = '7938270366';
+            // =====================
+
+            const pesan =
+                `📩 *Dari:* ${nama}\n\n📌 *Jawaban:*\n1️⃣ ${q1}\n2️⃣ ${q2}\n3️⃣ ${q3}\n4️⃣ ${q4}\n\n📸 *Jumlah PAP:* ${files.length} file\n💖 Untuk: Khotimah`;
+
+            try {
+                // 1. Kirim teks
+                const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: CHAT_ID, text: pesan, parse_mode: 'Markdown' })
+                });
+
+                if (!res.ok) throw new Error('Gagal kirim teks');
+
+                // 2. Kirim semua file (satu per satu biar aman)
+                let sukses = 0;
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const formData = new FormData();
+                    formData.append('chat_id', CHAT_ID);
+                    formData.append('document', file);
+
+                    const fileRes = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendDocument`, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (fileRes.ok) sukses++;
+                    // delay biar gak kena limit API
+                    if (i % 5 === 0) await new Promise(r => setTimeout(r, 1000));
+                }
+
+                statusDiv.innerHTML = `✅ Berhasil! ${sukses}/${files.length} file terkirim ❤️`;
+                document.getElementById('formKirim').reset();
+                fileCount.textContent = '📎 0 file dipilih';
+                fileList.innerHTML = '';
+
+            } catch (error) {
+                statusDiv.innerHTML = '❌ Gagal: ' + error.message;
+            }
+        });
+    </script>
+
+</body>
+</html>
